@@ -1,0 +1,10 @@
+location:Batavia
+units:imperial
+daylight:false
+ansi:false
+
+greeting_text:NOW
+wind_text:W
+humidity_text:H
+pressure_text:P
+
