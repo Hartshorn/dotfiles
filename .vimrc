@@ -55,24 +55,14 @@ autocmd vimenter * NERDTree
 
 map <C-n> :NERDTreeToggle<CR>
 
+let g:tmuxline_powerline_separators = 0
 
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'b'    : ['#H', '#(whoami)', '#(uname -o)'],
+      \'c'    : '#(ipconfig | grep IPv4 | cut -d: -f2)',
+      \'win'  : ['#I', '#W'],
+      \'cwin' : ['#I', '#W'],
+      \'x'    : ['%A', '%B %e', '%Y'],
+      \'z'    : '%r'}
 
-".vim
-"├── autoload
-"│   └── pathogen.vim
-"├── bundle
-"│   ├── julia-vim
-"│   ├── nerdtree
-"│   ├── rust.vim
-"│   ├── syntastic
-"│   ├── vim-airline
-"│   ├── vim-colors-solarized
-"│   ├── vim-fugitive
-"│   ├── vim-go
-"│   └── vim-sensible
-"└── colors
-"    ├── apprentice.vim
-"    ├── ego.vim
-"    ├── kafka.vim
-"    ├── lanox.vim
-"    └── off.vim
