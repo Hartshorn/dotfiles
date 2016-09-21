@@ -2,36 +2,23 @@
 # ~/.bashrc
 #
 
+# if there is a problem with these proxy environment variables
+# there is an additional line in the sudoers file that will
+# keep those environment variables when using sudo
+# this came up when trying to use "sudo pacman" as a regular user
+
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-
-# 1 = off; 0 = on; touchpad toggle
-alias tpon="synclient TouchpadOff=0"
-alias tpoff="synclient TouchpadOff=1"
-
 alias ls='ls --color=auto'
-alias sbcl='rlwrap sbcl'
-alias csi='rlwrap csi'
-
-alias weather='curl -s wttr.in | head -n -2'
-alias moon='curl -s wttr.in/Moon | head -n -2'
-
-alias statusbar='~/scripts/statusbar.sh'
-
-#
-# leaving these here for historical reasons - turned it into
-# a c program, though admitedly this is much simpler.
-#
-#alias dim='sudo tee /sys/class/backlight/intel_backlight/brightness <<< 2441'
-#alias bright='sudo tee /sys/class/backlight/intel_backlight/brightness <<< 4882'
-alias dim='echo "Please use the b program - usage: sudo b dim / bright"'
-alias bright='echo "Please use the b program - usage: sudo b dim / bright"'
-
-
-# path to cross compiler for osdev
-export PATH="/home/michael/builds/cross-compiler/opt/cross/bin/:$PATH"
-
-
 PS1='[\u@\h \W]\$ '
-EDITOR='vim'
+
+
+export http_proxy="http://212579854:eis12ley@PITC-Zscaler-US-MilwaukeeZ.proxy.corporate.ge.com:9400"
+export https_proxy="https://212579854:eis12ley@PITC-Zscaler-US-MilwaukeeZ.proxy.corporate.ge.com:9400"
+export ftp_proxy="http://212579854:eis12ley@PITC-Zscaler-US-MilwaukeeZ.proxy.corporate.ge.com:9400"
+
+#alias fullscreen='xrandr --output Virtual1 --mode 1680x1050'
+
+
