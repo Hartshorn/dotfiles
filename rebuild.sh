@@ -10,6 +10,7 @@ GITCLONE="git clone --depth=1"
 
 AUTOLOAD="/home/michael/.vim/autoload/"
 BUNDLE="/home/michael/.vim/bundle/"
+TMUX="/home/michael/.tmux/"
 
 TPOPE="tpope/"
 SCROOLOOSE="scrooloose/"
@@ -31,18 +32,24 @@ BUNDLEFILES="$SCROOLOOSE$NERDTREE	\
 	     $RUSTLANG$RUSTVIM		\
 	     $SCROOLOOSE$SYNTASTIC	\
 	     $TPOPE$VIMSENSIBLE		\
-	     $VIMAIRLINE_D$VIMAIRLINE	\
-	     $ERIKW$POWERLINE"
+	     $VIMAIRLINE_D$VIMAIRLINE"
+	    
+TMUXFILE="$ERIKW$POWERLINE"
+
 
 echo creating directories...
-mkdir -p $AUTOLOAD
-mkdir -p $BUNDLE
+	mkdir -p $AUTOLOAD
+	mkdir -p $BUNDLE
+	mkdir -p $TMUX
 echo directories created.
 echo
 echo
 for gitfile in $BUNDLEFILES; do
 	$GITCLONE $GIT$gitfile.git $BUNDLE$(echo $gitfile | cut -d "/" -f 2) 
 done
+
+	$GITCLONE $GIT$TMUXFILE.git $TMUX$(echo $TMUXFILE | cut -d "/" -f 2)
+
 echo
 echo
 echo GETTING PATHOGEN
